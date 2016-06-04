@@ -22,6 +22,7 @@ class Demo:
         this.windowID = glfw.create_window(640, 480, "Test", None, None)
         glfw.show_window(this.windowID)
         glfw.make_context_current(this.windowID)
+        glfw.swap_interval(1)
         glClearColor(0, 0, 0, 1);
 
 
@@ -30,7 +31,7 @@ class Demo:
 
     def render(this):
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-        time.sleep(1/60)
+        glfw.swap_buffers(this.windowID)
 
 
 if __name__ == '__main__':
